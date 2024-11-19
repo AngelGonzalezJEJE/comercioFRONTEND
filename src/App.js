@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Login from "./components/Login";
+import Register from "./components/Register";
+import GetAllWebsites from "./components/WebsiteList";
+import UpdateUserForm from "./components/UpdateUser";
+import DELETE_FOREVER from "./components/DELETEFOREVER";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Sitios Web</h1>
+      <Login />
+      <Register />
+      <UpdateUserForm/>
+      <DELETE_FOREVER />
+      <GetAllWebsites />
     </div>
   );
-}
+};
 
 export default App;
