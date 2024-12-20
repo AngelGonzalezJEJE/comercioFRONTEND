@@ -1,0 +1,544 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glitch Princess Theme Styles */
+
+/* Backgrounds and Text */
+.bg-glitch {
+  @apply bg-gradient-to-br from-purple-900 via-pink-800 to-blue-900 text-white;
+}
+
+@layer base {
+  body {
+    @apply font-mono;
+  }
+}
+
+/* mian page bg*/
+.bg-txt {
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3d5dzQwbTl0MXh5NWc2aTFzY3ZrbGdraGJ2YzY4dHkxNThieXRsbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sJvz8Qnfly3BOuotGx/giphy-downsized-large.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fixed-width {
+  display: inline-block;       
+  width: 200px;                
+  text-align: center;         
+  padding: 0.5rem 0;           
+  box-sizing: border-box;     
+}
+/* website List and details*/
+.bg-authToken {
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGhveW1pNmFhOGFhOTI4NXU4YmljY2N3ZzF4cGdscGx2M2FiNW9vMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LQ2zztPB7N3HE1Frfv/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+.text-glitch {
+  @apply text-purple-300 drop-shadow-[0_0_5px_rgba(255,255,255,0.8)];
+}
+
+/* Cards */
+.card-glitch {
+  @apply bg-gradient-to-r from-pink-500 to-purple-500 text-white border-2 border-pink-300 shadow-md shadow-purple-800 rounded-lg p-4 transform hover:scale-105 transition duration-300 ease-in-out bg-opacity-75;
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm9zYzJlZWdlNTVkMWo0ZmJ0cWNiOGE0M3V6Yjg0aWE5a3U2eWwxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-details {
+  @apply bg-gradient-to-r from-pink-500 to-purple-500 text-white border-2 border-pink-300 shadow-md shadow-purple-800 rounded-lg p-4 ;
+}
+/* Inputs and Buttons */
+.input-glitch {
+  @apply bg-gray-900 text-pink-300 border border-purple-500 rounded-lg p-2 w-full placeholder-pink-400 focus:outline-none focus:ring-2 focus:ring-purple-500;
+}
+
+.button-glitch {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-2 px-4 rounded transform hover:scale-105 transition duration-300 ease-in-out;
+}
+
+.green-glitch{
+  @apply py-2 px-6 bg-gradient-to-r from-blue-700 to-blue-400 text-white font-bold rounded-lg transform hover:scale-105 transition duration-300 ease-in-out
+}
+
+.red-glitch{
+  @apply py-2 px-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-lg transform hover:scale-105 transition duration-300 ease-in-out
+}
+
+.website-list-container {
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the component */
+  margin-bottom: 10% ;
+}
+
+/* Glitch Effect */
+.glitch-effect {
+  position: relative;
+  display: inline; /* Mantiene todo en una línea */
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080;
+}
+
+.glitch-effect:before,
+.glitch-effect:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  display: inline; /* Asegura que no afecten el flujo */
+  clip: rect(0, 0, 0, 0); /* Ajusta según el glitch */
+}
+
+.glitch-effect:before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00ff;
+  animation: glitch-anim 1.5s infinite;
+}
+
+.glitch-effect:after {
+  left: -2px;
+  text-shadow: -2px 0 #00ffff;
+  animation: glitch-anim 2s infinite;
+}
+
+.modal-overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50;
+}
+
+.modal-content {
+  @apply bg-glitch p-4 rounded-lg w-1/2 mt-8;
+  height: 80vh; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  @apply flex justify-between items-center;
+  position: sticky; /* Keeps header at the top */
+  top: 0;
+  z-index: 10; /* Make sure it's above content */
+  background: rgba(0, 0, 0, 0.7); /* Optional background for better readability */
+  padding: 1rem;
+  width: 100%;
+}
+
+.modal-body {
+  @apply overflow-y-auto flex-1 px-4 py-2; /* This makes the body scrollable */
+  max-height: calc(100% - 60px); /* Ensure the content area takes up the remaining space */
+}
+
+
+
+/* Close button styles */
+button.close-btn {
+  @apply absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-full px-4 py-2 font-bold;
+}
+
+button.close-btn:hover {
+  @apply text-red-200;
+}
+
+/*page Details  tab*/
+
+/* Add scroll styles to enable vertical scrolling */
+.scrollable-content {
+  @apply overflow-y-auto max-h-[80vh];
+}
+
+/* Optional: Style the scrollbars */
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Auth COmmerce */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.auth-form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ff36eb;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #00ff00;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #00cc00;
+}
+
+.alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.alert-error {
+  background-color: #dc3545;
+  color: white;
+} 
+
+
+/* Index Home */
+.home-container, .admin-container, .user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXRqdWk0Zjdpc3Zxb3p5c3prN2twZnExcnl4a2h0d2cyM2l3aXQ0eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sFR7u9SmkA09PqnyP8/giphy-downsized-large.gif");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+audio {
+  margin: 20px 0;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Login page */
+
+.bg-login {
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExenRlaWNneTJwY2x4eWU5eWplYzBoOGxob2pzY2d1dnRqbTc3eW9nZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GBdCK1qsVbe5kynHtW/giphy.gif');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Register*/
+.bg-register {
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3BydnE5OW15YWhlNmxiNnI3ZGZrdWZhaHNrbTN3M2xwanhwY200bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PyURc6dyHHDN4OG6Ob/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* admin dashboard */
+
+.bg-admin{
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb21jdmN1cWdkMGs5a3JiMDVhODAzYXE3N284c2xmYXFscDRqN2hxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/I5vy2EBf66xk9dOFrX/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.dashboard-container {
+  padding: 20px;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  color: white;
+}
+
+.info-section p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.website-image {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.text-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.text-item {
+  margin-bottom: 5px;
+}
+
+.alert-success {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.alert-error {
+  font-weight: bold;
+}
+
+/* DELETE FOREVER */
+/* In your CSS file or styled components */
+
+/* Glitch Princess themed button */
+.delete-btn {
+  position: relative;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-btn:disabled {
+  background-color: #d9534f;
+  cursor: not-allowed;
+}
+
+.delete-btn.loading {
+  background-color: darkred;
+}
+
+
+/* User */
+
+.bg-user {
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmJwdzRxbjRxa2swN3huY20xemFieTFyaGpnaXlqaXl2eXlxNTVnYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pYFXNY6kfSDJQzgQXM/giphy.gif');
+  background-repeat:no-repeat ;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Glitch effect */
+.delete-btn::before, .delete-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  opacity: 0.7;
+  transition: transform 0.3s ease-in-out;
+}
+
+.delete-btn::before {
+  z-index: 1;
+  animation: glitch-anim 1.5s infinite linear alternate-reverse;
+}
+
+.delete-btn::after {
+  z-index: 0;
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+/* Container for the token and label */
+.token-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Label for "Your Token" */
+.token-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.token-highlight {
+  display: inline-block;
+  max-width: 50%; /* Prevents it from exceeding the page width */
+  overflow-x: auto; /* Adds horizontal scrolling */
+  white-space: nowrap; /* Prevents wrapping */
+  padding: 8px 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #333333;
+  border: 1px solid #ff6fff;
+  border-radius: 4px;
+  text-align: center;
+  scrollbar-color: #ff62ff #333;
+}
+
+
+.token-highlight::-webkit-scrollbar {
+  height: 6px; 
+
+}
+
+.token-highlight::-webkit-scrollbar-thumb {
+  background: #ff00ff;
+  border-radius: 3px;
+}
+
+.token-highlight::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Page dashboard*/
+.bg-page{
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHZvMnI4aHcwZ3FhYjF4NnQ5b3loaHB4N2hvM2t3ejF3c25jZGgzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9jUu45ULnPmYM6Oihw/giphy-downsized-large.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+
+/* Update Page */
+.bg-UpdatePg{
+  background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWluZ2prZGwxZ3pnbXo2bGRmc21pYjYwMzc5bjJtZXh3ZjV5Y2J1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4zwcqlioS1mltXazzr/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+
+
+/* Glitch animation */
+@keyframes glitch-anim {
+  0% {
+    transform: translate(2px, 0) skew(0.1deg);
+  }
+  10% {
+    transform: translate(-2px, -2px) skew(0.3deg);
+  }
+  20% {
+    transform: translate(-1px, 1px) skew(0.2deg);
+  }
+  30% {
+    transform: translate(2px, 0) skew(0.1deg);
+  }
+  40% {
+    transform: translate(-2px, 0) skew(0.5deg);
+  }
+  50% {
+    transform: translate(0, 1px) skew(0.1deg);
+  }
+  60% {
+    transform: translate(1px, -2px) skew(0.3deg);
+  }
+  70% {
+    transform: translate(0, 2px) skew(0.2deg);
+  }
+  80% {
+    transform: translate(-1px, -2px) skew(0.1deg);
+  }
+  90% {
+    transform: translate(2px, 1px) skew(0.2deg);
+  }
+  100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+}
+
+/* Hover effect (for better visibility on hover) */
+.delete-btn:not(:disabled):hover {
+  background-color: darkred;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+
+
+
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(0, 900px, 0, 0);
+  }
+  10% {
+    clip: rect(0, 0, 100px, 0);
+  }
+  20% {
+    clip: rect(100px, 0, 100px, 0);
+  }
+  30% {
+    clip: rect(0, 900px, 0, 0);
+  }
+  40% {
+    clip: rect(0, 0, 100px, 0);
+  }
+  50% {
+    clip: rect(100px, 0, 100px, 0);
+  }
+}
