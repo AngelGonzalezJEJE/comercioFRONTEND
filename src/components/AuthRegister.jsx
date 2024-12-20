@@ -52,7 +52,8 @@ export default function Register() {
   return (
     <div className="auth-container bg-register">
       <form onSubmit={handleSubmit(onSubmit)} className="auth-form my-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8
+        ">
         <h1 className="text-glitch text-3xl glitch-effect mb-6 ">
           Register Form
         </h1>
